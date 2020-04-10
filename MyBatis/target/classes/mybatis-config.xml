@@ -87,11 +87,11 @@
         <!-- 使用相对于类路径的资源引用 -->
         <mapper resource="com/okgo/mybatis/dao/mapper/UserMapper.xml"/>
         <!-- 使用完全限定资源定位符（URL） 基本不用-->
-        <!--        <mapper url="file:///var/mappers/AuthorMapper.xml"/>-->
+<!--        <mapper url="file:///var/mappers/AuthorMapper.xml"/>-->
         <!-- 使用映射器接口实现类的完全限定类名
         接口和mapper配置文件必须同名，且必须在同一个包下-->
-        <!--        <mapper class="com.okgo.mybatis.dao.UserDao"/>-->
+<!--        <mapper class="com.okgo.mybatis.dao.UserDao"/>-->
         <!-- 将包内的映射器接口实现全部注册为映射器 -->
-        <!--        <package name="org.mybatis.builder"/>-->
+<!--        <package name="org.mybatis.builder"/>-->
     </mappers>
 </configuration>
