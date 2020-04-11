@@ -8,9 +8,9 @@
         <result property="id" column="tid"/>
         <result property="name" column="tname"/>
         <collection property="students" ofType="Student" javaType="ArrayList">
-            <!--<result property="id" column="tsid"/>
+            <result property="id" column="tsid"/>
             <result property="name" column="sname"/>
-            <result property="tid" column="tid"/>-->
+            <result property="tid" column="tid"/>
         </collection>
     </resultMap>
 

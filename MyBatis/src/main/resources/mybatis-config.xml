@@ -19,6 +19,8 @@
         <!--指定 MyBatis 所用日志的具体实现，未指定时将自动查找。
         SLF4J | LOG4J | LOG4J2 | JDK_LOGGING | COMMONS_LOGGING | STDOUT_LOGGING | NO_LOGGING-->
         <setting name="logImpl" value="LOG4J"/>
+        <!--开启驼峰命名-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
 
     <!--类型别名可为 Java 类型设置一个缩写名字。-->
@@ -27,6 +29,7 @@
         <typeAlias alias="User" type="com.okgo.mybatis.model.User"/>
         <typeAlias alias="Student" type="com.okgo.mybatis.model.Student"/>
         <typeAlias alias="Teacher" type="com.okgo.mybatis.model.Teacher"/>
+        <typeAlias alias="Blog" type="com.okgo.mybatis.model.Blog"/>
         <!--也可以指定一个包名，MyBatis 会在包名下面搜索需要的 Java Bean
         每一个在包 domain.blog 中的 Java Bean，在没有注解的情况下，会使用 Bean 的首字母小写的非限定类名来作为它的别名。
         比如 com.okgo.mybatis.model.User 的别名为 user；若有注解，则别名为其注解值。
@@ -80,6 +83,7 @@
         <mapper resource="com/okgo/mybatis/dao/mapper/UserMapper.xml"/>
         <mapper resource="com/okgo/mybatis/dao/mapper/StudentMapper.xml"/>
         <mapper resource="com/okgo/mybatis/dao/mapper/TeacherMapper.xml"/>
+        <mapper resource="com/okgo/mybatis/dao/mapper/BlogMapper.xml"/>
         <!--<mapper resource="com/okgo/mybatis/dao/mapper/*.xml"/>-->
         <!-- 使用完全限定资源定位符（URL） 基本不用-->
         <!--        <mapper url="file:///var/mappers/AuthorMapper.xml"/>-->
@@ -87,7 +91,8 @@
         接口和mapper配置文件必须同名，且必须在同一个包下-->
         <!--<mapper class="com.okgo.mybatis.dao.UserDao"/>
         <mapper class="com.okgo.mybatis.dao.StudentDao"/>
-        <mapper class="com.okgo.mybatis.dao.TeacherDao"/>-->
+        <mapper class="com.okgo.mybatis.dao.TeacherDao"/>
+        <mapper class="com.okgo.mybatis.dao.BlogDao"/>-->
         <!-- 将包内的映射器接口实现全部注册为映射器 -->
         <!--        <package name="org.mybatis.builder"/>-->
     </mappers>
