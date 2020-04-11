@@ -28,3 +28,11 @@
     3. 基本类型的入参要加@Param，引用类型不用
     4. #{}当成字符串来解析，可以防SQL注入，如role_id = "roleid" 
        ${}直接显示在sql中，无法防止SQL注入，如role_id = reoleid
+       
+### 多表查询
+    关联 - association 【多对一】
+    集合 - collection 【一对多】
+    javaType：用来指定实体类中属性的类型
+    ofType：用来指定映射到List或者集合中的pojo类型，泛型中的约束类型
+    
+    Mysql引擎，innoDB底层原理，索引，索引优化

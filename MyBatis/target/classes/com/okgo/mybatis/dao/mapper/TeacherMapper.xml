@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.okgo.mybatis.dao.TeacherDao">
+
+    <resultMap id="TS" type="Teacher">
+        <result property="id" column="tid"/>
+        <result property="name" column="tname"/>
+        <collection property="students" ofType="Student" javaType="ArrayList">
+            <!--<result property="id" column="tsid"/>
+            <result property="name" column="sname"/>
+            <result property="tid" column="tid"/>-->
+        </collection>
+    </resultMap>
+
+    <select id="getTeacher" resultMap="TS">
+        select ts.id tsid, ts.name sname, tid, tt.id ttid, ts.name tname
+        from test_student ts, test_teacher tt
+        where ts.tid = tt.id and tt.id = #{tid}
+    </select>
+
+    <!--<select id="getTeacher" resultMap="TS">
+        select * from test_teacher where id = #{tid}
+    </select>
+    <resultMap id="TS" type="Teacher">
+        <collection property="students" javaType="ArrayList" ofType="Student" select="getStudentByTid" column="id"/>
+    </resultMap>
+    <select id="getStudentByTid" resultType="student">
+        select * from test_student where tid = #{tid}
+    </select>-->
+
+</mapper>
