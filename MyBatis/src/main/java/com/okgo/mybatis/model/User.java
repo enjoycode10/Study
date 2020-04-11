@@ -1,11 +1,14 @@
 package com.okgo.mybatis.model;
 
+import java.io.Serializable;
+
 /**
  * @author Shawn
  * @date 2020/4/6 17:57
  * @title Function
  */
-public class User {
+public class User implements Serializable {
+    private static final long serialVersionUID = 1L;
     private Integer id;
     private String name;
     private Byte gender;

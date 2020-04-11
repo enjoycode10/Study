@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
+import javax.xml.bind.SchemaOutputResolver;
 import java.util.HashMap;
 import java.util.List;
 
@@ -96,6 +97,10 @@ public class UserDaoTest {
         UserDao userDao = sqlSession.getMapper(UserDao.class);
         User user = userDao.getUserById(1);
         System.out.println(user);
+        System.out.println("=======================");
+        User user2 = userDao.getUserById(1);
+        System.out.println(user2);
+        System.out.println(user == user2);
         sqlSession.close();
     }
 

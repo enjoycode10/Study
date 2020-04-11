@@ -3,13 +3,20 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.okgo.mybatis.dao.UserDao">
+    <!--<cache
+            eviction="FIFO"
+            flushInterval="60000"
+            size="512"
+            readOnly="true"/>-->
+
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
 
     <resultMap id="UserMap" type="User">
         <!--column数据库中的字段，property实体类中的属性-->
         <result column="id" property="id"/>
     </resultMap>
 
-    <select id="getUserByLimit" parameterType="map" resultType="User">
+    <select id="getUserByLimit" parameterType="map" resultType="User" useCache="true">
         select * from miaosha.user_info limit #{startIndex}, #{pageSize}
     </select>
 

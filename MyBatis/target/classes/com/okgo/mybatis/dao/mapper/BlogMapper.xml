@@ -58,7 +58,7 @@
     </update>
 
     <!--select * from mybatis.bolg where 1=1 and (id=1 or id=2 or id=3)
-    我们现在传递一个万能的map，这个map中可以存在一个map-->
+    我们现在传递一个万能的map，这个map中可以存在一个list-->
 
     <select id="queryBlogForeach" parameterType="map" resultType="Blog">
         select * from test_blog
