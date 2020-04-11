@@ -11,4 +11,20 @@
 * 对象传递参数，直接在sql中取出对象的属性即可
 * 多个参数用**map或者注解**
 
-
+### mybatis执行流程
+    1. resources获取加载全局配置文件
+    2. 实例化SqlSessionFactoryBuilder构造器
+    3. 解析配置文件流XMLConfigBuilder
+    4. Configuration配置所有参数
+    5. SqlSessionFactory实例化
+    6. transaction管理器
+    7. 创建executor执行器
+    8. 实现crud(结合step6)
+    9. 执行成功，关闭SqlSession
+    
+### 注解开发
+    1. mybatis-config.xml 中绑定接口class类型
+    2. sqlSessionFactory.openSession(true); 开启自动化事务管理
+    3. 基本类型的入参要加@Param，引用类型不用
+    4. #{}当成字符串来解析，可以防SQL注入，如role_id = "roleid" 
+       ${}直接显示在sql中，无法防止SQL注入，如role_id = reoleid

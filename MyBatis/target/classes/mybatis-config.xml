@@ -16,19 +16,9 @@
         <setting name="cacheEnabled" value="true"/>
         <!--延迟加载的全局开关。当开启时，所有关联对象都会延迟加载。 特定关联关系中可通过设置 fetchType 属性来覆盖该项的开关状态。-->
         <setting name="lazyLoadingEnabled" value="true"/>
-        <setting name="multipleResultSetsEnabled" value="true"/>
-        <setting name="useColumnLabel" value="true"/>
-        <setting name="useGeneratedKeys" value="false"/>
-        <setting name="autoMappingBehavior" value="PARTIAL"/>
-        <setting name="autoMappingUnknownColumnBehavior" value="WARNING"/>
-        <setting name="defaultExecutorType" value="SIMPLE"/>
-        <setting name="defaultStatementTimeout" value="25"/>
-        <setting name="defaultFetchSize" value="100"/>
-        <setting name="safeRowBoundsEnabled" value="false"/>
-        <setting name="mapUnderscoreToCamelCase" value="false"/>
-        <setting name="localCacheScope" value="SESSION"/>
-        <setting name="jdbcTypeForNull" value="OTHER"/>
-        <setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString"/>
+        <!--指定 MyBatis 所用日志的具体实现，未指定时将自动查找。
+        SLF4J | LOG4J | LOG4J2 | JDK_LOGGING | COMMONS_LOGGING | STDOUT_LOGGING | NO_LOGGING-->
+        <setting name="logImpl" value="LOG4J"/>
     </settings>
 
     <!--类型别名可为 Java 类型设置一个缩写名字。-->
@@ -85,13 +75,13 @@
     </environments>
     <mappers>
         <!-- 使用相对于类路径的资源引用 -->
-        <mapper resource="com/okgo/mybatis/dao/mapper/UserMapper.xml"/>
+        <!--<mapper resource="com/okgo/mybatis/dao/mapper/UserMapper.xml"/>-->
         <!-- 使用完全限定资源定位符（URL） 基本不用-->
-<!--        <mapper url="file:///var/mappers/AuthorMapper.xml"/>-->
+        <!--        <mapper url="file:///var/mappers/AuthorMapper.xml"/>-->
         <!-- 使用映射器接口实现类的完全限定类名
         接口和mapper配置文件必须同名，且必须在同一个包下-->
-<!--        <mapper class="com.okgo.mybatis.dao.UserDao"/>-->
+        <mapper class="com.okgo.mybatis.dao.UserDao"/>
         <!-- 将包内的映射器接口实现全部注册为映射器 -->
-<!--        <package name="org.mybatis.builder"/>-->
+        <!--        <package name="org.mybatis.builder"/>-->
     </mappers>
 </configuration>

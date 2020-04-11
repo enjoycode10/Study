@@ -9,6 +9,10 @@
         <result column="id" property="id"/>
     </resultMap>
 
+    <select id="getUserByLimit" parameterType="map" resultType="User">
+        select * from miaosha.user_info limit #{startIndex}, #{pageSize}
+    </select>
+
     <select id="getUserList" resultType="User" resultMap="UserMap">
         select * from miaosha.user_info
     </select>

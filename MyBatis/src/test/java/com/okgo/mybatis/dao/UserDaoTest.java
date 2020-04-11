@@ -3,6 +3,7 @@ package com.okgo.mybatis.dao;
 import com.okgo.mybatis.model.User;
 import com.okgo.mybatis.utils.MyBatisUtils;
 import org.apache.ibatis.session.SqlSession;
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -14,6 +15,54 @@ import java.util.List;
  * @title Function
  */
 public class UserDaoTest {
+
+    static Logger logger = Logger.getLogger(UserDaoTest.class);
+
+    @Test
+    public void testLog4j() {
+        logger.info("info: ");
+        logger.debug("info: ");
+        logger.error("info: ");
+        logger.trace("info: ");
+        logger.fatal("info: ");
+    }
+
+    @Test
+    public void testGetUserByIdAnnotation() {
+        SqlSession sqlSession = MyBatisUtils.getSqlSession();
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        User user = mapper.getUserByIdAnnotation(1);
+        System.out.println(user);
+
+        sqlSession.close();
+    }
+
+    @Test
+    public void testGetUsers() {
+        SqlSession sqlSession = MyBatisUtils.getSqlSession();
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        List<User> userByLimit = mapper.getUsers();
+        for (User user : userByLimit) {
+            System.out.println(user);
+        }
+        sqlSession.close();
+    }
+
+    @Test
+    public void testGetUserByLimit() {
+        SqlSession sqlSession = MyBatisUtils.getSqlSession();
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        HashMap<String, Integer> map = new HashMap<>();
+        map.put("startIndex", 0);
+        map.put("pageSize", 2);
+
+        List<User> userByLimit = mapper.getUserByLimit(map);
+        for (User user : userByLimit) {
+            System.out.println(user);
+        }
+        sqlSession.close();
+    }
+
     @Test
     public void test() {
         // 1. 获取SqlSession对象
