@@ -11,6 +11,10 @@
         <module>Swagger</module>
         <module>MyBatis</module>
         <module>Spring</module>
+        <module>Alipay</module>
+        <module>DesignPattern</module>
+        <module>Interview</module>
+        <module>Mail</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -34,7 +38,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.2.2.RELEASE</version>
+                <version>2.1.9.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

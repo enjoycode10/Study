@@ -1,0 +1,17 @@
+{
+  "alipay_trade_pay_response": {
+    "code": "10003",
+    "msg": " order success pay inprocess",
+    "buyer_logon_id": "hjg***@sandbox.com",
+    "buyer_pay_amount": "0.00",
+    "buyer_user_id": "2088102180741813",
+    "buyer_user_type": "PRIVATE",
+    "invoice_amount": "0.00",
+    "out_trade_no": "1b7090d1-d576-46cb-8e37-c426b2b95f4c",
+    "point_amount": "0.00",
+    "receipt_amount": "0.00",
+    "total_amount": "0.01",
+    "trade_no": "2020041922001441810501078287"
+  },
+  "sign": "UWDELSSQA9LpRV2FVnUPfYcQH9D0S9giO2PzpWagC3C7VM35epsTkcPYGKgZnse0PnZO5D1zuq5gRfKVdaDUqnZs115vvgTCcVD0KOhV4Ie/2jASaRF99nM5/ChAN9ViYQ2QgPkg99f87BUPcn4lsPb9l791ZyXxBXVsfGd/fM6hp/Jg5rxWHWWKCB1oKZ+i17kuUMvl8qVS7qRiZTxAkSlBtV7WAeuRnZPA/BGrwjx/ImAgn3aMdEJkq1Y5bK0NsMTzgyuPCC6o0wJi8MJtUbqONaXdd664g9Ff0kxhP8YbLnX3GaOrBRKt7VV5LgijgSeFvb89N9bjcE1i4flSQw=="
+}
