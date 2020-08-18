@@ -15,6 +15,7 @@
         <module>DesignPattern</module>
         <module>Interview</module>
         <module>Mail</module>
+        <module>LeetCode</module>
     </modules>
     <packaging>pom</packaging>
 
