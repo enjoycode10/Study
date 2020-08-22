@@ -1,8 +1,6 @@
-package com.okgo.leetcode.num1;
+package com.okgo.leetcode.q1;
 
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * @author Shawn

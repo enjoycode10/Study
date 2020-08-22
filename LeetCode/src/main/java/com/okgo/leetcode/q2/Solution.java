@@ -1,4 +1,4 @@
-package com.okgo.leetcode.num2;
+package com.okgo.leetcode.q2;
 
 import com.okgo.leetcode.ListNode;
 

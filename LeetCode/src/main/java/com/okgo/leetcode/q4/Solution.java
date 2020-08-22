@@ -1,4 +1,4 @@
-package com.okgo.leetcode.num4;
+package com.okgo.leetcode.q4;
 
 /**
  * @author Shawn
