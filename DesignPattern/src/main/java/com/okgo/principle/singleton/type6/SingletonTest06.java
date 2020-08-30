@@ -22,7 +22,7 @@ class Singleton {
     private Singleton() {
     }
 
-    // 加入双重检测的代码，解决线程安全和懒加载问题
+    // 加入双重检测的代码，解决线程安全和懒加载问题(空check空create)
 
     public static synchronized Singleton getInstance() {
         if (instance == null) {
