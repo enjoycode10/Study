@@ -9,6 +9,36 @@ import java.util.List;
  * @title Function
  */
 public class BinarySearch {
+
+    public static int binarySearch4(int[] arr, int n, int target){
+        int l = 0, r = n; //声明循环不变量：在 [l...r) 的范围内寻找target
+
+        while (l<r){ //当 l==r 时，区间 [l...r) 依然时有效的
+            int mid = l + (r-l)/2; //使用减法避免整型溢出
+            if (arr[mid] == target) return mid;
+            if (target > arr[mid]) {
+                l = mid + 1;
+            }else if (target < arr[mid]){
+                r = mid;
+            }
+        }
+        return -1;
+    }
+
+    public static int binarySearch3(int[] arr, int n, int target){
+        int l = 0, r = n-1; //声明循环不变量：在 [l...r] 的范围内寻找target
+
+        while (l<=r){ //当 l==r 时，区间 [l...r] 依然时有效的
+            int mid = (l + r)/2; //加法会存在整型溢出
+            if (arr[mid] == target) return mid;
+            if (target > arr[mid]) {
+                l = mid + 1;
+            }else if (target < arr[mid]){
+                r = mid - 1;
+            }
+        }
+        return -1;
+    }
     /**
      * 二分查找 时间复杂度O(log2n);空间复杂度O(1) 
      *
@@ -82,9 +112,8 @@ public class BinarySearch {
 
     public static void main(String[] args) {
         //注意：需要对已排序的数组进行二分查找  
-        int[] data = {- 49, -30, -16, 9, 21, 21, 23, 30, 30
-        };
-        int i = binarySearch(data, 0, data.length, 21);
+        int[] data = {-49, -30, -16, 9, 21,   21, 23, 30, 30};
+        int i = binarySearch3(data, data.length, 21);
         System.out.println(i);
     }
 }
