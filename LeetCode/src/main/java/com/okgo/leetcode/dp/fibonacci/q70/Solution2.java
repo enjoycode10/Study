@@ -1,5 +1,7 @@
 package com.okgo.leetcode.dp.fibonacci.q70;
 
+import java.util.Arrays;
+
 /**
  * @author Shawn
  * @date 2020/12/6 12:51
@@ -8,14 +10,16 @@ package com.okgo.leetcode.dp.fibonacci.q70;
  */
 public class Solution2 {
     private int[] memo;
+
     public int climbStairs(int n) {
         this.memo = new int[n+1];
+        Arrays.fill(this.memo, -1);
         return calcWays(n);
     }
 
     private int calcWays(int n) {
         if (n == 0 || n == 1) return 1;
-        if (memo[n] == 0) memo[n] = calcWays(n-1) + calcWays(n-2);
+        if (memo[n] == -1) memo[n] = calcWays(n-1) + calcWays(n-2);
         return memo[n];
     }
 }
